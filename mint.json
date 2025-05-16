@@ -34,7 +34,7 @@
     },
     {
       "name": "Get a demo",
-      "icon": "presentation-chart",
+      "icon": "laptop",
       "url": "https://dub.sh/2HwMxBP"
     },
     {
@@ -51,7 +51,7 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "why-leapfrog", "quickstart"]
+      "pages": ["introduction", "why-leapfrog", "quickstart", "synthesis"]
     },
     {
       "group": "Basics",
@@ -60,9 +60,9 @@
         "basics/document-editor",
         "basics/transcribing-interviews",
         "basics/quotes-and-tags",
+        "basics/auto-coding",
         "basics/canvas",
-        "basics/chat",
-        "basics/synthesis"
+        "basics/chat"
       ]
     }
   ],
