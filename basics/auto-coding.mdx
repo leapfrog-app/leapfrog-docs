@@ -8,26 +8,20 @@ icon: "tags"
 
 ## What is Guided Coding?
 
-**Guided coding** is a unique feature in Leapfrog that allows you to automatically analyze and tag your research data. With guided coding, you can provide custom examples on how to code your data. For best practices on writing effective prompts, see the [few-shot examples guide](https://www.promptingguide.ai/techniques/fewshot).
-
-This way, you can ensure that the coding process is both efficient and aligned with your research goals. AI will now behave similar as your team would, and can be guided to code in a way that is most useful for your research.
-
----
+Guided coding automatically analyzes and tags your research data based on custom examples you provide. The AI follows your team's coding patterns and terminology to ensure consistent analysis across your research.
 
 ## Workspace-Level Settings
 
 ### Customization Per Workspace
 
-Each workspace in Leapfrog can have its own **coding settings**. This is important because every UXR team or project may have different coding conventions, focus areas, or definitions of what is "interesting" or "insightful."
+Each workspace has unique coding settings to match your team's conventions and research focus.
 
 **Workspace-level settings include:**
 
-- **Default Prompt/Instructions:** Custom instructions that guide the AI on how to generate codes, including few-shot examples that demonstrate your desired coding style and terminology. These examples help the AI understand your team's specific approach to coding qualitative data. For best practices on writing effective prompts, see our [few-shot examples guide](https://www.promptingguide.ai/techniques/fewshot).
-- **Interest Threshold:** A sensitivity setting (1–10) that determines how "interesting" a piece of text must be to be tagged. Higher values mean only the most insightful remarks are coded.
+- **Default Prompt/Instructions:** Custom instructions and examples that define your coding style and terminology
+- **Interest Threshold:** A sensitivity setting (1–10) that controls how "interesting" text must be to be tagged. Higher values result in fewer, more insightful tags.
 
-These settings are managed via the workspace settings. They are used as defaults whenever guided coding is triggered, ensuring that the coding process aligns with the specific needs and standards of each team or project.
-
----
+These settings are managed in workspace settings and apply as defaults for all guided coding operations.
 
 ## How Code Generation Works
 
@@ -35,51 +29,35 @@ These settings are managed via the workspace settings. They are used as defaults
 
 1. **Data Extraction:**
 
-   - The system analyzes your workspace document and identifies distinct semantic blocks of text (e.g., speech bubbles, paragraphs, or conversation turns) that contain meaningful content.
+   - Identifies distinct semantic blocks of text (speech bubbles, paragraphs, conversation turns)
 
 2. **Interest Evaluation:**
 
-   - For each text element, the AI evaluates how "interesting" or valuable it is, using the workspace's interest threshold. Only text above this threshold is considered for coding (if enabled).
+   - Evaluates text against the workspace's interest threshold
+   - Only codes text above the threshold (if enabled)
 
 3. **Code Generation:**
 
-   - The AI attempts to find a similar existing code (tag) using semantic similarity. If a close match is found, it reuses that code.
-   - If not, the AI generates a new code using your custom instructions (prompt) and the text itself. The code is:
-     - **Short and concise** (max 5 words, under 25 characters, no punctuation)
-     - Accompanied by a **brief description** (under 100 characters)
-     - Optionally, a **key segment** (the most informative part of the text) is identified for partial highlighting.
+   - Matches existing codes using semantic similarity
+   - Creates new codes following these rules:
+     - Short and concise (max 5 words, under 25 characters, no punctuation)
+     - Includes brief description (under 100 characters)
+     - Optionally identifies key segment for partial highlighting
 
 4. **Highlighting:**
 
-   - The relevant segment of the text is highlighted in the document, visually linking the code to the original data.
+   - Highlights relevant text segments in the document
 
 5. **Tag Management:**
-   - Codes are deduplicated and stored as tags. Highlights are grouped by tag and document, and all changes are saved efficiently.
+   - Deduplicates and stores codes as tags
+   - Groups highlights by tag and document
 
----
+## Customizing AI Behavior
 
-## Why Customization Matters
+The instructions you provide directly control the AI's coding behavior. You can:
 
-Every UXR project is different: teams may focus on different themes, use different terminology, or have unique definitions of what is "insightful." By allowing you to set custom instructions and sensitivity per workspace, Leapfrog ensures that guided coding is:
+- Focus on specific types of codes (pain points, suggestions, feedback)
+- Set coding style and tone
+- Define which content to prioritize or ignore
 
-- **Flexible:** Adapts to your team's workflow and research goals.
-- **Consistent:** Codes generated reflect your standards, not just generic AI output.
-- **Controllable:** You can manipulate the AI's behavior by editing the instructions, making it more or less strict, changing the style, or focusing on specific topics.
-
----
-
-## Manipulating the AI with Instructions
-
-The **instructions** (prompt) you provide are passed directly to the AI model. This means you can:
-
-- Specify what kinds of codes you want (e.g., focus on pain points, suggestions, or positive feedback)
-- Set the tone or style (e.g., formal, casual, technical)
-- Instruct the AI to ignore certain types of remarks or prioritize others
-
-**Tip:** Experiment with different instructions to see how the generated codes change. This is a powerful way to tailor the guided coding process to your exact needs.
-
----
-
-## Summary
-
-Leapfrog's guided coding feature streamlines qualitative analysis by using AI to suggest, manage, and highlight codes based on your workspace's unique settings. By customizing instructions and sensitivity, you ensure that the coding process is both efficient and aligned with your research goals.
+For best practices on writing effective prompts, see the [few-shot examples guide](https://www.promptingguide.ai/techniques/fewshot).
