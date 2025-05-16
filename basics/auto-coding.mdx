@@ -4,60 +4,148 @@ description: "Learn how to use AI-powered guided coding to automatically analyze
 icon: "tags"
 ---
 
-# Guided-AI Coding
+# AI-Guided Coding
 
-## What is Guided Coding?
+AI-Guided coding in Leapfrog automates the analysis and tagging of research data based on custom examples and instructions. This system follows your team's established coding patterns and terminology to ensure consistent analysis across your research project.
 
-Guided coding automatically analyzes and tags your research data based on custom examples you provide. The AI follows your team's coding patterns and terminology to ensure consistent analysis across your research.
+## How AI-Guided Coding Works
 
-## Workspace-Level Settings
+### Process Overview
 
-### Customization Per Workspace
+1. **Configuration**: Set workspace-level instructions and parameters for the AI.
+2. **Data Analysis**: The AI analyzes your research data, identifying relevant segments.
+3. **Code Generation**: The system creates or applies tags according to your defined patterns.
+4. **Highlighting**: Relevant text is highlighted in the document.
+5. **Review**: You can review and refine the AI-generated tags.
 
-Each workspace has unique coding settings to match your team's conventions and research focus.
+### Benefits
 
-**Workspace-level settings include:**
+- **Efficiency**: Reduces manual coding time for large datasets
+- **Consistency**: Applies the same coding criteria across all documents
+- **Customization**: Adapts to your specific research methodology and terminology
+- **Scale**: Enables analysis of larger datasets than manual coding alone
 
-- **Default Prompt/Instructions:** Custom instructions and examples that define your coding style and terminology
-- **Interest Threshold:** A sensitivity setting (1–10) that controls how "interesting" text must be to be tagged. Higher values result in fewer, more insightful tags.
+## Workspace Configuration
 
-These settings are managed in workspace settings and apply as defaults for all guided coding operations.
+Each workspace has dedicated coding settings to match your team's specific needs:
 
-## How Code Generation Works
+### Accessing Coding Settings
 
-### The Guided Coding Pipeline
+1. Navigate to your workspace
+2. Open **Settings**
+3. Select the **Coding** tab
 
-1. **Data Extraction:**
+### Available Configurations
 
-   - Identifies distinct semantic blocks of text (speech bubbles, paragraphs, conversation turns)
+- **Default Instructions**: Custom prompts that define your coding methodology and terminology
+- **Interest Threshold**: A sensitivity setting (1-10) that controls how "interesting" text must be to receive tags
+  - Higher values (7-10): More selective, fewer tags, focusing only on highly relevant content
+  - Medium values (4-6): Balanced approach
+  - Lower values (1-3): More inclusive, more tags, capturing a wider range of potentially relevant content
 
-2. **Interest Evaluation:**
+### Customizing Instructions
 
-   - Evaluates text against the workspace's interest threshold
-   - Only codes text above the threshold (if enabled)
+The instructions you provide directly control the AI's behavior. Effective instructions:
 
-3. **Code Generation:**
+- Specify the types of themes to tag (pain points, suggestions, user needs)
+- Define the desired formatting and style of tags
+- Identify content types to prioritize or ignore
+- Include examples of correctly tagged content
 
-   - Matches existing codes using semantic similarity
-   - Creates new codes following these rules:
-     - Short and concise (max 5 words, under 25 characters, no punctuation)
-     - Includes brief description (under 100 characters)
-     - Optionally identifies key segment for partial highlighting
+## The Coding Pipeline
 
-4. **Highlighting:**
+### 1. Data Extraction
 
-   - Highlights relevant text segments in the document
+The system identifies distinct semantic blocks in your content:
 
-5. **Tag Management:**
-   - Deduplicates and stores codes as tags
-   - Groups highlights by tag and document
+- Speech bubbles or quotes
+- Paragraphs
+- Conversation turns
+- Distinct semantic units
 
-## Customizing AI Behavior
+### 2. Interest Evaluation
 
-The instructions you provide directly control the AI's coding behavior. You can:
+If enabled, the AI evaluates each text block against your workspace's interest threshold:
 
-- Focus on specific types of codes (pain points, suggestions, feedback)
-- Set coding style and tone
-- Define which content to prioritize or ignore
+- Only content exceeding the threshold receives tags
+- This focuses coding efforts on the most relevant material
 
-For best practices on writing effective prompts, see the [few-shot examples guide](https://www.promptingguide.ai/techniques/fewshot).
+### 3. Code Generation
+
+The AI generates appropriate tags through:
+
+- **Matching**: Applying existing tags from your workspace when semantically appropriate
+- **Creation**: Generating new tags following these rules:
+  - Concise format (maximum 5 words, under 25 characters)
+  - No punctuation
+  - Clear, descriptive labels
+  - Brief description (under 100 characters) explaining the tag's purpose
+  - Identification of key segments for partial highlighting when appropriate
+
+### 4. Highlighting
+
+The system automatically highlights the tagged text:
+
+- Full highlighting for entire segments
+- Partial highlighting for specific key phrases within larger contexts
+
+### 5. Tag Management
+
+The system manages the created tags by:
+
+- Deduplicating similar or identical tags
+- Storing tags at the workspace level
+- Organizing highlights by tag and document
+- Making tags available for filtering and visualization
+
+## Using AI-Generated Tags
+
+After AI-guided coding has processed your documents, you can:
+
+1. **Review Tags**: Examine the AI-generated tags in the document view
+2. **Refine Tags**: Edit or delete tags that don't meet your needs
+3. **Visualize Patterns**: Use the Codes page to visualize tag distribution
+4. **Filter Content**: Find all content with specific tags across all documents
+5. **Export Analysis**: Extract insights based on the coded data
+
+## Best Practices
+
+- **Start with clear instructions**: Provide specific, detailed guidance to the AI
+- **Use few-shot examples**: Include 3-5 examples of correctly tagged content in your instructions
+- **Adjust the interest threshold**: Fine-tune based on how much content is being tagged
+- **Iterative refinement**: Review results and adjust settings as needed
+- **Combine with manual coding**: Use AI coding as a starting point, then refine manually
+
+## Advanced Techniques
+
+### Pattern Recognition
+
+Train the AI to recognize specific patterns in your data:
+
+```
+Look for: Mentions of difficulty completing tasks
+Example: "I struggled to find where to click to save my file"
+Tag as: [usability issue]
+```
+
+### Comparative Analysis
+
+Configure the AI to identify contrasting perspectives:
+
+```
+Identify: Contrasting opinions about the same feature
+Example: "I love the new dashboard" vs. "The dashboard is confusing"
+Tag as: [mixed feedback: dashboard]
+```
+
+### Sequential Analysis
+
+Guide the AI to tag sequential interactions:
+
+```
+Find: Steps users take to complete a task
+Example: "First I clicked settings, then I had to search for account..."
+Tag as: [user journey: settings]
+```
+
+For more guidance on creating effective AI instructions, see the [few-shot examples guide](https://www.promptingguide.ai/techniques/fewshot).

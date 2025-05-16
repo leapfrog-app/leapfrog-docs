@@ -28,6 +28,10 @@
               "basics/canvas",
               "basics/chat"
             ]
+          },
+          {
+            "group": "Advanced Features",
+            "pages": ["analytics", "collaboration"]
           }
         ]
       }
