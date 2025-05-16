@@ -1,98 +1,72 @@
 ---
-title: 'Development'
-description: 'Learn how to preview changes locally'
+title: "Development"
+description: "Learn how to preview changes locally"
 ---
 
-<Info>
-  **Prerequisite** You should have installed Node.js (version 18.10.0 or
-  higher).
-</Info>
+## Prerequisites
 
-Step 1. Install Mintlify on your OS:
+- Node.js (version 18.10.0 or higher) must be installed.
 
-<CodeGroup>
+## Local Preview
 
-```bash npm
-npm i -g mintlify
-```
-
-```bash yarn
-yarn global add mintlify
-```
-
-</CodeGroup>
-
-Step 2. Go to the docs are located (where you can find `mint.json`) and run the following command:
-
-```bash
-mintlify dev
-```
-
-The documentation website is now available at `http://localhost:3000`.
+1. Install Mintlify globally:
+   - Using npm:
+     ```bash
+     npm i -g mintlify
+     ```
+   - Using yarn:
+     ```bash
+     yarn global add mintlify
+     ```
+2. Navigate to the directory containing your documentation (where `mint.json` is located).
+3. Start the local development server:
+   ```bash
+   mintlify dev
+   ```
+   The documentation website will be available at `http://localhost:3000` by default.
 
 ### Custom Ports
 
-Mintlify uses port 3000 by default. You can use the `--port` flag to customize the port Mintlify runs on. For example, use this command to run in port 3333:
+- To use a custom port, add the `--port` flag:
+  ```bash
+  mintlify dev --port 3333
+  ```
+- If the port is already in use, you will see an error similar to:
+  ```
+  Error: listen EADDRINUSE: address already in use :::3000
+  ```
 
-```bash
-mintlify dev --port 3333
-```
+## Updating Mintlify CLI
 
-You will see an error like this if you try to run Mintlify in a port that's already taken:
-
-```md
-Error: listen EADDRINUSE: address already in use :::3000
-```
-
-## Mintlify Versions
-
-Each CLI is linked to a specific version of Mintlify. Please update the CLI if your local website looks different than production.
-
-<CodeGroup>
-
-```bash npm
-npm i -g mintlify@latest
-```
-
-```bash yarn
-yarn global upgrade mintlify
-```
-
-</CodeGroup>
+- To update the CLI to the latest version:
+  - Using npm:
+    ```bash
+    npm i -g mintlify@latest
+    ```
+  - Using yarn:
+    ```bash
+    yarn global upgrade mintlify
+    ```
 
 ## Deployment
 
-<Tip>
-  Unlimited editors available under the [Startup
-  Plan](https://mintlify.com/pricing)
-</Tip>
-
-You should see the following if the deploy successfully went through:
-
-<Frame>
-  <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
-</Frame>
+- Unlimited editors are available under the [Startup Plan](https://mintlify.com/pricing).
+- After a successful deployment, you should see a confirmation screen.
 
 ## Troubleshooting
 
-Here's how to solve some common problems when working with the CLI.
+- **Mintlify is not loading:**
+  - Update to Node v18 or higher.
+  - Run `mintlify install` and try again.
+- **No such file or directory on Windows:**
+  - Go to `C:/Users/Username/.mintlify/` and remove the `mint` folder.
+  - Open Git Bash in this location and run:
+    ```bash
+    git clone https://github.com/mintlify/mint.git
+    ```
+  - Repeat the local preview steps.
+- **Unknown error:**
+  - Navigate to the root of your device and delete the `~/.mintlify` folder.
+  - Run `mintlify dev` again.
 
-<AccordionGroup>
-  <Accordion title="Mintlify is not loading">
-    Update to Node v18. Run `mintlify install` and try again.
-  </Accordion>
-  <Accordion title="No such file or directory on Windows">
-Go to the `C:/Users/Username/.mintlify/` directory and remove the `mint`
-folder. Then Open the Git Bash in this location and run `git clone
-https://github.com/mintlify/mint.git`.
-
-Repeat step 3.
-
-  </Accordion>
-  <Accordion title="Getting an unknown error">
-    Try navigating to the root of your device and delete the ~/.mintlify folder.
-    Then run `mintlify dev` again.
-  </Accordion>
-</AccordionGroup>
-
-Curious about what changed in a CLI version? [Check out the CLI changelog.](/changelog/command-line)
+For CLI version changes, see the [CLI changelog](/changelog/command-line).

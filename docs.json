@@ -1,0 +1,85 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Leapfrog Docs",
+  "colors": {
+    "primary": "#22c55e",
+    "light": "#07C983",
+    "dark": "#0D9373"
+  },
+  "favicon": "/logo/logo-noname.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": ["introduction", "why-leapfrog", "quickstart", "synthesis"]
+          },
+          {
+            "group": "Basics",
+            "pages": [
+              "basics/workspaces",
+              "basics/document-editor",
+              "basics/transcribing-interviews",
+              "basics/quotes-and-tags",
+              "basics/auto-coding",
+              "basics/canvas",
+              "basics/chat"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Product",
+          "href": "https://dub.sh/qBduPB4",
+          "icon": "right-to-bracket"
+        },
+        {
+          "anchor": "Get a demo",
+          "href": "https://dub.sh/2HwMxBP",
+          "icon": "laptop"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://leapfrogapp.slack.com/ssb/redirect#/shared-invite/email",
+          "icon": "slack"
+        },
+        {
+          "anchor": "Blog",
+          "href": "https://leapfrogapp.com/blog",
+          "icon": "newspaper"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/logo.svg",
+    "dark": "/logo/logo.svg",
+    "href": "https://www.leapfrogapp.com/"
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Leapfrog",
+      "href": "https://www.leapfrogapp.com/"
+    }
+  },
+  "footer": {
+    "socials": {
+      "website": "https://www.leapfrogapp.com/",
+      "slack": "https://leapfrogapp.slack.com/ssb/redirect#/shared-invite/email",
+      "github": "https://github.com/Jkense/docs",
+      "linkedin": "https://www.linkedin.com/company/leapfrogapp"
+    }
+  },
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-2NCL92R0HG"
+    }
+  }
+}
