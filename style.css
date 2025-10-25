@@ -1,0 +1,17 @@
+.almond-layout,
+#navbar {
+  background-color: #f7f5f3; /* light gray background */
+}
+
+/* Target elements that might have the F4F4F5 color applied via CSS, but exclude content-container */
+div[class*="bg-"]:not(#content-container) {
+  background-color: #f7f5f3 !important;
+}
+
+/* Target any element with F4F4F5 background color, but exclude content-container */
+*[style*="background-color: #F4F4F5"]:not(#content-container),
+*[style*="background-color:#F4F4F5"]:not(#content-container),
+*[style*="background: #F4F4F5"]:not(#content-container),
+*[style*="background:#F4F4F5"]:not(#content-container) {
+  background-color: #f7f5f3 !important;
+}
