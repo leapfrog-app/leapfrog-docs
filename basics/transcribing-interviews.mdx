@@ -4,163 +4,58 @@ description: "Convert your interview recordings into a readable format"
 icon: "waveform-lines"
 ---
 
-This guide will walk you through the process of transcribing audio and video clips in Leapfrog and how to effectively use transcripts in your research projects.
+# Transcribing Interviews
+
+Transcribe audio and video files into text for analysis.
 
 ![Transcription Interface](/images/transcription.png)
 
-## Where to Find Transcription Settings
+## Settings
 
-You can configure your default transcription settings—including custom vocabulary—in the Leapfrog web app:
+Configure default transcription settings in **Workspace Settings > Transcription Settings**:
 
-- **Go to your workspace.**
-- Open the **Settings** for your workspace.
-- Navigate to the **Transcription Settings** section.
+- **Auto-transcribe on upload**: Start transcription automatically
+- **Model selection**: Choose the transcription model
+- **Language selection**: Set default language or auto-detect
+- **Redaction**: Enable automatic redaction of sensitive information
+- **Filler words**: Include or exclude filler words
+- **Custom vocabulary**: Add unique words, names, or jargon (one word per line)
 
-Here, you can adjust:
+Settings apply to new uploads by default but can be overridden per transcription.
 
-- **Auto-transcribe on upload:** Automatically start transcription when new clips are uploaded.
-- **Model selection:** Choose the transcription model best suited for your audio.
-- **Language selection:** Set the default language or enable automatic detection.
-- **Redaction:** Enable or disable automatic redaction of sensitive information.
-- **Filler words:** Choose whether to include or exclude filler words in transcripts.
-- **Custom vocabulary:** Add unique words, names, or jargon to improve recognition accuracy. Enter one word per line—each will be automatically formatted and saved.
+## Process
 
-These settings apply to all new clips in the workspace by default, but you can override them for individual transcriptions as needed.
+1. Create a new document
+2. Click **Upload audio or video** in the document editor
+3. Select your file
+4. Click **Transcribe** and configure settings:
+   - **Redaction**: Redact sensitive information (names, addresses)
+   - **Exclude filler words**: Remove "uh," "um," etc.
+   - **Language**: Select language or use Autoselect
 
-## Prerequisites
-
-- An active Leapfrog workspace.
-- An audio or video file ready for transcription.
-
-## Step 1: Create a New Document
-
-To begin, create a new document in your Leapfrog workspace:
-
-1. Open your workspace in the Leapfrog web app.
-2. Click the **New Document** button located in the top right corner of your screen.
-3. Name your document and confirm. You will be automatically redirected to the document's page.
-
-Now you are ready to start adding media files for transcription.
-
-## Step 2: Upload Audio or Video Files
-
-To add media files, use the toolbar in the document editor:
-
-![Add a new transcript](/images/transcribing-interviews/insert-transcript.svg)
-
-1. In the document editor, click **Upload audio or video to get started**.
-2. Choose the audio or video file you want to upload from your computer.
-3. Wait for the upload to complete. Once the file is uploaded, you'll see a button to start the transcription.
-
-## Step 3: Start the Transcription
-
-1. Click the **Transcribe** button to begin the transcription process.
-2. Configure your transcription settings. You can customize the following options:
-   - **Redaction**: Automatically redact sensitive information, such as names or addresses.
-   - **Exclude filler words**: Remove common filler words like "uh," "um," and "mhmm" to produce a cleaner transcript.
-   - **Language selection**: Choose the language of the audio or video file for transcription. You can manually select a language or use **Autoselect** to detect it automatically.
-
-### Supported Languages
-
-Leapfrog's Nova-2 general purpose model supports a wide range of languages, including:
-Bulgarian, Catalan, Chinese (Mandarin - Simplified and Traditional), Chinese (Cantonese), Czech, Danish, Dutch, English (US, Australia, UK, New Zealand, India), Estonian, Finnish, Flemish, French, French (Canada), German, German (Switzerland), Greek, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Latvian, Lithuanian, Malay, Norwegian, Polish, Portuguese (Brazil, Portugal), Romanian, Russian, Slovak, Spanish, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian, and Vietnamese.
-Note that specialized models (Meeting, Phone Call, Financial, Medical, Automotive) currently only support English.
-
-## Model Selection
-
-Leapfrog now offers advanced Nova-2 transcription models to meet different needs:
-
-### General Purpose Models
-
-- **Nova-2**: Latest model with improved accuracy across various audio types. Supports all available languages.
-- **Enhanced General Purpose**: Improved version with better accuracy for general audio. Supports a subset of languages.
-- **Base General Purpose**: Suitable for a wide range of audio inputs. Supports a moderate range of languages.
-
-### Specialized Models
-
-- **Meeting**: Optimized for multi-speaker meetings and conference calls. Currently supports English only.
-- **Phone Call**: Tailored for two-speaker phone conversations and customer service interactions. Currently supports English only.
-- **Financial**: Specialized for financial terms and jargon in professional settings. Currently supports English only.
-- **Medical**: Specialized for medical terminology and healthcare-related conversations. Currently supports English only.
-- **Automotive**: Tailored for in-car audio and automotive industry terminology. Currently supports English only.
-
-## Supported File Types
-
-Leapfrog supports the following file formats for audio and video transcription:
+## Supported formats
 
 - **Video**: .mp4, .webm, .ogv, .avi, .mov, .mkv
 - **Audio**: .mp3, .wav, .ogg, .aac, .webm, .flac
 
-### Example of Redaction
+## Models
 
-Here's an example of how redaction might work in a transcript:
+### General Purpose
 
-| **Original**                                             | **Redacted**                                          |
-| -------------------------------------------------------- | ----------------------------------------------------- |
-| "Hi, my name is Jane Doe and I live at 123 Main Street." | "Hi, my name is [NAME_1] and I live at [LOCATION_1]." |
-| "My bank account number is 1234567890."                  | "My bank account number is [ACCOUNT_NUMBER_1]."       |
-| "You can contact me at john.doe@example.com."            | "You can contact me at [EMAIL_ADDRESS_1]."            |
+- **Nova-2**: Latest model, supports all available languages
+- **Enhanced General Purpose**: Improved accuracy, subset of languages
+- **Base General Purpose**: Moderate language support
 
-Leapfrog automatically identifies and redacts sensitive personal information to protect privacy.
+### Specialized (English only)
 
-## Step 4: Custom Vocabulary
+- **Meeting**: Multi-speaker meetings
+- **Phone Call**: Two-speaker conversations
+- **Financial**: Financial terminology
+- **Medical**: Healthcare terminology
+- **Automotive**: In-car audio
 
-Leapfrog allows you to add a custom vocabulary to improve transcription accuracy for unique terms, names, or jargon specific to your project. This is especially useful for industry-specific terminology, uncommon names, or acronyms that may not be recognized by default.
+Specialized models currently support English only.
 
-- **How to use:** Enter your custom vocabulary in the provided field in the transcription settings. Add one word per line (no spaces). Each word will be automatically formatted and saved to help the transcription engine recognize these terms during processing.
-- **Tip:** Only one word per line is allowed. Avoid adding phrases or words with spaces.
+## Languages
 
-**Example:**
-
-| Custom Vocabulary Input |
-| ----------------------- |
-| Leapfrog                |
-| QDA                     |
-| ethnography             |
-| usertesting             |
-| Smithson                |
-
-This feature ensures that your transcripts are as accurate and relevant as possible, even when working with specialized language.
-
-## Step 5: Configure Filler Words
-
-**Filler words**—such as "uh" and "um"—are common in spoken language, but can clutter transcripts. You can choose to either include or exclude these filler words from your transcription.
-
-### What Are Filler Words?
-
-Filler words are non-essential phrases that people often use in conversation to pause or think aloud. Common filler words include:
-
-- uh
-- um
-- mhmm
-- uh-huh
-
-You can customize your transcription process to either keep these words for a more natural flow or remove them for a cleaner result.
-
-### Example with and without Filler Words
-
-| **Original**                                                                   | **With Filler Words**                                                          | **Without Filler Words**                                          |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
-| "Uh, so you're looking for, uh, something specific, um, like a precise model." | "Uh, so you're looking for, uh, something specific, um, like a precise model." | "So you're looking for something specific, like a precise model." |
-
-To adjust filler word settings:
-
-1. Enable **Filler Words** to keep them in the transcript.
-2. Disable **Filler Words** to remove them and improve readability.
-
-## Additional Options: Language Selection
-
-Leapfrog allows you to transcribe audio or video in multiple languages. Simply choose the language in the transcription settings or enable the **Autoselect** option to detect the language automatically.
-
-## What's Next?
-
-Once your transcription is complete, you can start analyzing the data by:
-
-- **Tagging and coding** the transcript to identify key themes and patterns.
-- **Collaborating with your team** to refine your insights.
-
-To learn more about these steps, visit our [Tagging and Coding](https://leapfrogapp.com/docs/coding) documentation page.
-
----
-
-Now that you've learned how to transcribe audio and video, move on to our guide for analyzing transcripts and extracting insights.
+Nova-2 supports: Bulgarian, Catalan, Chinese (Simplified and Traditional), Chinese (Cantonese), Czech, Danish, Dutch, English (US, Australia, UK, New Zealand, India), Estonian, Finnish, Flemish, French, French (Canada), German, German (Switzerland), Greek, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Latvian, Lithuanian, Malay, Norwegian, Polish, Portuguese (Brazil, Portugal), Romanian, Russian, Slovak, Spanish, Spanish (Latin America), Swedish, Thai, Turkish, Ukrainian, Vietnamese.

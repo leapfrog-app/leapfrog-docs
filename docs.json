@@ -33,7 +33,9 @@
               "basics/quotes-and-tags",
               "basics/auto-coding",
               "basics/canvas",
-              "basics/chat"
+              "basics/chat",
+              "basics/integrations",
+              "basics/organizations"
             ]
           },
           {

@@ -1,125 +1,48 @@
 ---
 title: "Guided-coding"
-description: "Learn how to use AI-powered guided coding to automatically analyze and tag your research data"
+description: "Use AI-powered guided coding to automatically analyze and tag your research data"
 icon: "tags"
 ---
 
 # AI-Guided Coding
 
-AI-Guided coding in Leapfrog automates the analysis and tagging of research data based on custom examples and instructions. This system follows your team's established coding patterns and terminology to ensure consistent analysis across your research project.
+Automatically analyze and tag research data based on custom instructions and examples.
 
 ![AI-Guided Coding Interface](/images/auto-coding.png)
 
-## How AI-Guided Coding Works
+## Setup
 
-### Process Overview
+Configure in **Workspace Settings > Coding**:
 
-1. **Configuration**: Set workspace-level instructions and parameters for the AI.
-2. **Data Analysis**: The AI analyzes your research data, identifying relevant segments.
-3. **Code Generation**: The system creates or applies tags according to your defined patterns.
-4. **Highlighting**: Relevant text is highlighted in the document.
-5. **Review**: You can review and refine the AI-generated tags.
+- **Default Instructions**: Define coding methodology and terminology
+- **Interest Threshold** (1-10): Controls sensitivity for tagging
+  - Higher (7-10): More selective, fewer tags
+  - Medium (4-6): Balanced
+  - Lower (1-3): More inclusive, more tags
 
-### Benefits
+## Usage
 
-- **Efficiency**: Reduces manual coding time for large datasets
-- **Consistency**: Applies the same coding criteria across all documents
-- **Customization**: Adapts to your specific research methodology and terminology
-- **Scale**: Enables analysis of larger datasets than manual coding alone
+After configuration, AI-guided coding:
 
-## Workspace Configuration
+1. Analyzes documents and identifies relevant segments
+2. Creates or applies tags following your patterns
+3. Highlights tagged text in documents
+4. Stores tags at the workspace level
 
-Each workspace has dedicated coding settings to match your team's specific needs:
+Review and refine AI-generated tags in the document view.
 
-### Accessing Coding Settings
+## Tag format
 
-1. Navigate to your workspace
-2. Open **Settings**
-3. Select the **Coding** tab
+AI-created tags follow these rules:
 
-### Available Configurations
+- Concise (max 5 words, under 25 characters)
+- No punctuation
+- Brief description (under 100 characters)
 
-- **Default Instructions**: Custom prompts that define your coding methodology and terminology
-- **Interest Threshold**: A sensitivity setting (1-10) that controls how "interesting" text must be to receive tags
-  - Higher values (7-10): More selective, fewer tags, focusing only on highly relevant content
-  - Medium values (4-6): Balanced approach
-  - Lower values (1-3): More inclusive, more tags, capturing a wider range of potentially relevant content
+## Best practices
 
-### Customizing Instructions
-
-The instructions you provide directly control the AI's behavior. Effective instructions:
-
-- Specify the types of themes to tag (pain points, suggestions, user needs)
-- Define the desired formatting and style of tags
-- Identify content types to prioritize or ignore
-- Include examples of correctly tagged content
-
-## The Coding Pipeline
-
-### 1. Data Extraction
-
-The system identifies distinct semantic blocks in your content:
-
-- Speech bubbles or quotes
-- Paragraphs
-- Conversation turns
-- Distinct semantic units
-
-### 2. Interest Evaluation
-
-If enabled, the AI evaluates each text block against your workspace's interest threshold:
-
-- Only content exceeding the threshold receives tags
-- This focuses coding efforts on the most relevant material
-
-### 3. Code Generation
-
-The AI generates appropriate tags through:
-
-- **Matching**: Applying existing tags from your workspace when semantically appropriate
-- **Creation**: Generating new tags following these rules:
-  - Concise format (maximum 5 words, under 25 characters)
-  - No punctuation
-  - Clear, descriptive labels
-  - Brief description (under 100 characters) explaining the tag's purpose
-  - Identification of key segments for partial highlighting when appropriate
-
-### 4. Highlighting
-
-The system automatically highlights the tagged text:
-
-- Full highlighting for entire segments
-- Partial highlighting for specific key phrases within larger contexts
-
-### 5. Tag Management
-
-The system manages the created tags by:
-
-- Deduplicating similar or identical tags
-- Storing tags at the workspace level
-- Organizing highlights by tag and document
-- Making tags available for filtering and visualization
-
-## Using AI-Generated Tags
-
-After AI-guided coding has processed your documents, you can:
-
-1. **Review Tags**: Examine the AI-generated tags in the document view
-2. **Refine Tags**: Edit or delete tags that don't meet your needs
-3. **Visualize Patterns**: Use the Codes page to visualize tag distribution
-4. **Filter Content**: Find all content with specific tags across all documents
-5. **Export Analysis**: Extract insights based on the coded data
-
-## Best Practices
-
-- **Start with clear instructions**: Provide specific, detailed guidance to the AI
-- **Use few-shot examples**: Include 3-5 examples of correctly tagged content in your instructions
-- **Adjust the interest threshold**: Fine-tune based on how much content is being tagged
-- **Iterative refinement**: Review results and adjust settings as needed
-- **Combine with manual coding**: Use AI coding as a starting point, then refine manually
-
-## Advanced Techniques
-
-### Pattern Recognition
-
-Train the AI to recognize specific patterns in your data:
+- Provide clear, specific instructions
+- Include 3-5 examples of correctly tagged content
+- Adjust interest threshold based on results
+- Review and refine AI tags as needed
+- Combine AI coding with manual refinement
