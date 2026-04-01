@@ -1,0 +1,97 @@
+---
+title: "Agent Skills"
+description: "Add reusable SKILL.md instructions for Leapfrog chat"
+icon: "wand-magic-sparkles"
+---
+
+# Agent Skills
+
+Agent skills let Leapfrog discover reusable instructions from your workspace or your user profile. When a task matches a skill, Leapfrog can load that `SKILL.md` and use it as part of the chat workflow.
+
+## Place files
+
+Create one folder per skill and put a `SKILL.md` file inside it.
+
+Leapfrog looks in these locations:
+
+- Workspace `.opencode/skills/<name>/SKILL.md`
+- Workspace `.claude/skills/<name>/SKILL.md`
+- Workspace `.agents/skills/<name>/SKILL.md`
+- Global `~/.config/opencode/skills/<name>/SKILL.md`
+- Global `~/.claude/skills/<name>/SKILL.md`
+- Global `~/.agents/skills/<name>/SKILL.md`
+
+## Understand discovery
+
+For workspace-local skills, Leapfrog starts from the current workspace folder and walks upward until it reaches the git worktree root. At each level, it checks the `.opencode`, `.claude`, and `.agents` skill folders.
+
+If the workspace is not inside a git repository, Leapfrog only checks the current workspace folder plus the global locations in your user profile.
+
+You can review the exact workspace root and searched paths in **Settings > Chat > Agent Skills**.
+
+## Write frontmatter
+
+Each `SKILL.md` must start with YAML frontmatter.
+
+Recognized fields:
+
+- `name` required
+- `description` required
+- `license` optional
+- `compatibility` optional
+- `metadata` optional string-to-string map
+
+Example:
+
+```mdx
+---
+name: interview-summary
+description: Summarize research interviews into concise findings
+license: MIT
+compatibility: opencode
+metadata:
+  audience: research
+  workflow: synthesis
+---
+
+## What I do
+
+- Summarize interviews
+- Extract themes and tensions
+- Suggest follow-up questions
+```
+
+## Validate names
+
+The skill `name` must:
+
+- Be 1 to 64 characters
+- Use lowercase letters and numbers
+- Use single hyphens as separators
+- Match the directory name that contains `SKILL.md`
+
+Equivalent pattern:
+
+```text
+^[a-z0-9]+(-[a-z0-9]+)*$
+```
+
+## Follow length rules
+
+The `description` must be between 1 and 1024 characters.
+
+Keep it specific. Leapfrog uses the description to decide which skill best matches the current task.
+
+## Troubleshoot loading
+
+If a skill does not appear in the Agent Skills card:
+
+1. Confirm the file is named `SKILL.md` in all caps.
+2. Check that the frontmatter includes both `name` and `description`.
+3. Make sure the folder name matches the declared `name`.
+4. Make sure the skill name is unique across workspace and global locations.
+5. Open **Settings > Chat > Agent Skills** and inspect the searched paths and any diagnostic error message.
+
+## Refresh discovery
+
+Use the **Refresh** button in **Settings > Chat > Agent Skills** after adding or editing a skill. Leapfrog will rediscover the available skills and show the updated diagnostics panel.
