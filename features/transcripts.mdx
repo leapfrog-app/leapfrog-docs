@@ -1,0 +1,63 @@
+---
+title: Transcripts
+description: 'Transcribe media, edit transcript text, rename speakers, and tag passages without leaving the workspace.'
+---
+
+Leapfrog turns media files into editable transcript sidecars that live next to the source recording.
+
+## Supported media types
+
+Leapfrog can transcribe these formats:
+
+- Audio: `.mp3`, `.wav`, `.m4a`, `.flac`, `.aac`, `.ogg`, `.opus`, `.wma`
+- Video: `.mp4`, `.webm`, `.mov`, `.m4v`, `.mts`, `.m2ts`, `.ts`
+
+## Start a transcript
+
+1. Right-click a supported media file in Explorer.
+2. Choose **Transcribe**.
+3. Confirm the language and transcript options.
+4. Leapfrog creates a `.transcript.json` sidecar and opens it in the transcript editor.
+
+You can also enable **Auto-transcribe new media files** in settings if you want this to happen automatically for newly added recordings.
+
+## What you can do in the transcript editor
+
+- watch upload and transcription progress inline
+- stop an in-flight transcription
+- rename speakers
+- edit transcript text directly
+- apply existing tags or create a new tag from a selection
+- run auto-tagging on the transcript
+- retranscribe or delete the transcript sidecar
+- reattach media if the transcript and media need to be linked again
+
+## Transcript options
+
+These settings are available from **Leapfrog Settings > Transcripts**:
+
+| Option | What it changes |
+| --- | --- |
+| Language or auto-detect | Sets transcription language behavior |
+| Sentiment analysis | Adds sentiment analysis to transcript segments |
+| Entity detection | Detects named entities |
+| Auto chapters | Adds chapter structure where supported |
+| Redaction | Redacts sensitive information in transcript text |
+| Include filler words | Keeps or removes disfluencies like `um` and `uh` |
+| Filter profanity | Filters profanity in transcript text |
+| Completion notifications | Shows an OS notification when a transcript finishes |
+| Transcript region | Uses the configured AssemblyAI region |
+
+## Transcript files
+
+Transcript sidecars are normal files, even though Leapfrog hides them in Explorer by default.
+
+That matters because you can:
+
+- include them in semantic indexing
+- auto-tag them like other research files
+- keep them in source control if your workflow wants that
+
+## Good workflow
+
+Transcribe first, make a quick pass to rename speakers and clean obvious issues, then start tagging or run auto-tagging once the transcript matches the structure you want to analyze.

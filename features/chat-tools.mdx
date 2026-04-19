@@ -1,0 +1,72 @@
+---
+title: Chat Tools
+description: 'Understand the tools Leapfrog can use in chat, when they appear, and how approvals work.'
+---
+
+Leapfrog manages chat tools inside the built-in chat experience. You do not configure them from the old settings card anymore.
+
+Use **Configure Tools** in the chat input when you want to see or adjust the available tool set for the current chat flow.
+
+## How modes affect tools
+
+- **Ask** mode is designed for investigation without changing project artifacts.
+- **Research** mode can use active tools like transcription, auto-tagging, and bounded file edits.
+
+Even in Research mode, some tools can still require approval.
+
+## Workspace inspection tools
+
+| Tool | What it does |
+| --- | --- |
+| `navigate` | Finds files and symbols by path-like matching |
+| `editor-info` | Reads the current editor context and selection |
+| `workspace` | Returns workspace metadata and folder info |
+| `fs-list` | Lists files and directories |
+| `fs-read` | Reads a workspace file with bounded output |
+| `glob` | Finds files by pattern |
+| `grep` | Searches file contents by text or regex |
+| `question` | Asks you for a short clarification mid-workflow |
+
+## Leapfrog research tools
+
+| Tool | What it does |
+| --- | --- |
+| `search` | Searches indexed research data and transcript chunks |
+| `transcribe` | Starts a transcript job for a workspace media file |
+| `auto-tag` | Runs semantic auto-tagging on a file or transcript |
+
+These are the tools that make Leapfrog feel different from a generic coding chat.
+
+## Web and analysis tools
+
+| Tool | What it does |
+| --- | --- |
+| `webfetch` | Reads a known URL |
+| `websearch` | Searches the web for external context |
+| `analysis` | Runs inline Python or Node analysis without writing files |
+| `bash` | Runs workspace-scoped shell commands when needed |
+
+## Skill and workflow tools
+
+| Tool | What it does |
+| --- | --- |
+| `skill` | Loads a reusable `SKILL.md` instruction set |
+| `skill-resource` | Reads a bounded resource next to a skill |
+| `skill-run` | Executes an approved script from a skill |
+
+## Write tools
+
+| Tool | What it does |
+| --- | --- |
+| `write` | Creates or overwrites a workspace file |
+| `edit` | Applies a bounded edit to an existing text file |
+
+## Approvals
+
+Leapfrog supports `allow`, `ask`, and `deny` permission modes. Permissions can be scoped by chat mode, so the same tool can behave differently in Ask and Research.
+
+If you choose **Always allow** in chat, Leapfrog stores that decision for the current mode. You can review or change those permissions later in **Leapfrog Settings > Chat**.
+
+## Notifications
+
+If you turn on confirmation notifications in settings, Leapfrog can notify you when a tool approval is waiting while the window is not focused.

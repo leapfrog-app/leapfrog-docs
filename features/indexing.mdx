@@ -1,0 +1,65 @@
+---
+title: Indexing
+description: 'Index your workspace for semantic search, retrieval, and cloud-backed sync.'
+---
+
+Indexing is what makes Leapfrog searchable by meaning instead of just by filename.
+
+## What indexing does
+
+Leapfrog scans the eligible files in your workspace, breaks them into structured chunks, and builds embeddings for semantic retrieval.
+
+Today that means:
+
+- markdown files are chunked by headings
+- plain-text files are chunked by paragraphs
+- transcript sidecars are chunked by speaker turns
+
+Leapfrog keeps your source files local. The desktop app syncs embeddings and related metadata to the cloud for connected search workflows.
+
+## Default indexed file types
+
+By default, Leapfrog indexes:
+
+- `**/*.md`
+- `**/*.markdown`
+- `**/*.txt`
+- `**/*.transcript.json`
+
+You can override that in **Leapfrog Settings > Indexing** with include and exclude patterns.
+
+## How to use it
+
+1. Open **Leapfrog Settings > Indexing**.
+2. Run **Sync** to build or refresh the index.
+3. Leave **Automatic Indexing** on if you want changed files to re-index automatically.
+4. Ask chat questions that rely on semantic retrieval, or use the search tool in Research or Ask mode.
+
+## Why it matters
+
+Indexing is what makes these workflows feel fast:
+
+- asking for themes across multiple transcripts
+- finding similar passages across notes and interviews
+- jumping from a high-level question back to specific evidence
+- keeping cloud search aligned with the current workspace scope
+
+## Pattern control
+
+Use include and exclude patterns when you want to:
+
+- keep generated files out of retrieval
+- focus on only one part of the workspace
+- avoid indexing large folders that are not part of the study
+
+If you change patterns, run **Sync** again so the cloud index reflects the new scope.
+
+## Common states
+
+In the desktop app you may see indexing described as:
+
+- **Local indexing is running** when the desktop app is scanning, chunking, or embedding
+- **Waiting for Leapfrog auth** when the workspace is not connected yet
+- **Indexed in cloud** when the connected workspace scope is synced
+
+If search quality looks wrong, the first thing to check is whether the right files are actually included.

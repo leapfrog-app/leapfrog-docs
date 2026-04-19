@@ -1,0 +1,64 @@
+---
+title: Auto-Tagging
+description: 'Use Leapfrog to break files into semantic chunks and apply tags back to the workspace.'
+---
+
+Auto-tagging is Leapfrog's fast path from raw text to a first-pass coded workspace.
+
+## What it does
+
+Leapfrog breaks the target into semantic chunks, compares those chunks with your existing tags, and then:
+
+- reuses matching tags
+- optionally creates new tags when no existing tag fits
+- applies the results back to the file or transcript
+
+It works best when the codebook already has a little structure. Manual tags and tag descriptions give the model better anchors.
+
+## Supported targets
+
+Leapfrog can auto-tag:
+
+- markdown files
+- plain-text files
+- transcript sidecars
+- common text/code files such as `.js`, `.ts`, `.tsx`, `.py`, and `.json`
+
+You can run it on a full file or on a selected range.
+
+## Where to run it
+
+- Explorer context menu with **Auto-Tag File**
+- transcript editor title action
+- chat in **Research** mode through the `auto-tag` tool
+
+## Configure the behavior
+
+Open **Leapfrog Settings > Tagging** to control:
+
+- **Allow creating new tags**
+- **Auto-tag new files and transcripts**
+- **Reuse saved wizard settings**
+- optional project instructions
+- optional examples that show the tagging style you want
+
+Those instructions and examples are the best place to teach Leapfrog how your team names and scopes tags.
+
+## What to expect
+
+Auto-tagging is best used as a first pass, not as the final answer.
+
+Use it to:
+
+- speed up large transcript sets
+- keep repetitive tagging work moving
+- expose candidate themes you can review and refine
+
+Then use the Tags view and direct file edits to clean up the output.
+
+## Best results
+
+- define your core tags first
+- add short descriptions for ambiguous tags
+- save a few examples when the project has a specific coding style
+- review tags after each large run instead of waiting until the end

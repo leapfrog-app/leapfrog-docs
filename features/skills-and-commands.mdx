@@ -1,0 +1,74 @@
+---
+title: Skills and Slash Commands
+description: 'Extend Leapfrog Chat with reusable skills and workspace command shortcuts.'
+---
+
+Leapfrog has two reusable workflow layers:
+
+- **skills** for persistent capability bundles
+- **slash commands** for prompt shortcuts in chat
+
+## Skills
+
+Skills are discovered from `SKILL.md` files.
+
+Leapfrog looks in these workspace locations:
+
+- `.opencode/skills/<name>/SKILL.md`
+- `.claude/skills/<name>/SKILL.md`
+- `.agents/skills/<name>/SKILL.md`
+
+It also checks matching global locations in your user profile.
+
+Each skill should declare at least:
+
+- `name`
+- `description`
+
+Use skills when you want Leapfrog to load a repeatable workflow or domain-specific instruction set on demand.
+
+## Skill diagnostics
+
+Open **Leapfrog Settings > Chat > Agent Skills** to:
+
+- see which skills were discovered
+- inspect searched paths
+- refresh discovery after editing a skill
+
+## Slash commands
+
+Type `/` in chat to open available slash commands.
+
+Workspace commands are a good fit for:
+
+- review prompts
+- explanation prompts
+- commit helpers
+- recurring synthesis templates
+
+Commands can shape the request by:
+
+- expanding into a longer prompt
+- overriding the chat mode
+- narrowing the enabled tool set
+- pointing at workspace files
+
+## What makes slash commands useful
+
+They let you standardize prompts without asking every user to remember the full wording.
+
+In practice, that means a team can keep commands like:
+
+- `/review`
+- `/explain`
+- `/commit`
+
+inside the workspace and reuse them across sessions.
+
+## When to use which
+
+| Use | Pick |
+| --- | --- |
+| Reusable instruction bundle that can be loaded by the agent | Skill |
+| Fast command in the chat input that expands into a prompt | Slash command |
+| Team-specific workflow tied to one repository or workspace | Usually both |

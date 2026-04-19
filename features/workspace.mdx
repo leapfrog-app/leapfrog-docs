@@ -1,0 +1,45 @@
+---
+title: Workspace
+description: 'Leapfrog treats your local folder as the source of truth and adds research tooling around it.'
+---
+
+Leapfrog is built around a normal local workspace. You open a folder, and Leapfrog works with the files already inside it.
+
+## What lives in the workspace
+
+| Item | Where it lives |
+| --- | --- |
+| Notes, exports, source files | Normal workspace files |
+| Transcript sidecars | Next to the source media as `.transcript.json` |
+| Local Leapfrog support data | `.agents/` |
+
+Leapfrog hides `.transcript.json` and `.agents/` in Explorer by default so the workspace stays readable.
+
+## Main workspace views
+
+### Explorer
+
+Use Explorer for the raw file tree. This is still the fastest way to move around a project, open source files, and start transcript or auto-tag workflows from a file context menu.
+
+### Favorites
+
+Favorites is a lightweight shortlist inside Explorer. Right-click any file and choose **Favorite/unfavorite** to keep important files close.
+
+### Tags
+
+The Tags view is the codebook plus evidence browser. Expand a tag to see child tags, files, and exact snippets where that tag was applied.
+
+### Chat
+
+Chat runs in the same workspace, so mentions, attachments, transcript actions, and generated outputs stay close to the source material.
+
+### Settings
+
+Settings is where you manage authentication, indexing, transcript defaults, tagging guidance, chat permissions, and privacy controls.
+
+## Best practices
+
+- Keep transcripts, notes, and working synthesis docs in the same folder tree.
+- Favorite the files you cross-reference the most.
+- Let indexing include both notes and transcript sidecars.
+- Treat the workspace as the durable record, even when chat helps generate or edit content.

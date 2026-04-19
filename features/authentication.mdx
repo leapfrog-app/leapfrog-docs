@@ -1,0 +1,36 @@
+---
+title: Authentication
+description: 'Connect your Leapfrog account to unlock transcription, chat, and cloud-backed workspace features.'
+---
+
+Authentication links the desktop workspace to your Leapfrog account.
+
+## What connection unlocks
+
+You need a connected account for:
+
+- chat
+- transcription
+- cloud-backed index sync
+- authenticated research actions that call the Leapfrog backend
+
+Local browsing, editing, and manual tagging can still happen in the workspace without a connection.
+
+## Connect the desktop app
+
+1. Open **Leapfrog Settings > Authentication**.
+2. Choose **Connect**.
+3. Approve the workspace in the browser.
+4. Return to Leapfrog after the browser hands the session back to the desktop app.
+
+Leapfrog uses a desktop approval flow so the app can connect the right local workspace to the right Leapfrog project.
+
+## Disconnect
+
+If you disconnect from settings, Leapfrog removes the authenticated desktop session for that workspace and account.
+
+## Session behavior
+
+Leapfrog keeps a durable desktop session and refreshes it while the app stays active. In practice, that means you do not need to reconnect for every session.
+
+If a token expires or is revoked, Leapfrog will ask you to connect again before running authenticated features.

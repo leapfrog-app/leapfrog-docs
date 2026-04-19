@@ -1,0 +1,68 @@
+---
+title: Chat
+description: 'Ask questions, inspect evidence, and run workspace tools from the same desktop app.'
+---
+
+Leapfrog Chat is built for workspace-native research. It can read the same files you are editing, pull context from mentions and attachments, and use tools when the mode allows it.
+
+## Modes
+
+| Mode | Use it when | Default posture |
+| --- | --- | --- |
+| Ask | You want answers, summaries, and evidence without changing project artifacts | Read-only |
+| Research | You want Leapfrog to use active research workflows like transcription, auto-tagging, or file edits | Tool-using |
+
+Ask is the safer mode. Research is the more capable mode.
+
+## Mentions
+
+Type `@` in the composer to mention:
+
+- files
+- folders
+- tags
+
+Mentions are a fast way to narrow the request and keep the answer grounded in a specific part of the workspace.
+
+## Attachments
+
+You can attach local files directly to a message.
+
+Leapfrog handles them like this:
+
+- smaller text-like files can be included inline
+- larger or binary files are attached as references
+- files above 10 MB are reference-only
+
+This keeps the conversation useful without bloating the context window.
+
+## Sessions
+
+Chat keeps reusable sessions inside the workspace.
+
+You can:
+
+- start a new session
+- find a past session
+- pin or archive sessions
+- delete sessions you no longer need
+
+## Model and mode selection
+
+Pick the model and mode from the chat input. Leapfrog remembers the selected state for the workspace and lets you switch when the task changes.
+
+## Tool traces and approvals
+
+When Leapfrog uses a tool, the message can show the tool trace inline. If a tool needs approval, you can:
+
+- allow it once
+- deny it
+- choose **Always allow** to persist that permission for the current mode
+
+Read more in [Chat Tools](/features/chat-tools).
+
+## Slash commands
+
+Type `/` in chat to open workspace command shortcuts. These commands can expand into longer prompts and shape how Leapfrog approaches the request.
+
+Read more in [Skills and Slash Commands](/features/skills-and-commands).
