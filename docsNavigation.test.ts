@@ -33,6 +33,7 @@ const requiredRoutes = [
   'introduction',
   'why-leapfrog',
   'quickstart',
+  'features/tray',
   'features/workspace',
   'features/indexing',
   'features/transcripts',

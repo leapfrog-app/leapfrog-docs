@@ -40,6 +40,10 @@
             ]
           },
           {
+            "group": "Desktop Shell",
+            "pages": ["features/tray"]
+          },
+          {
             "group": "Advanced Features",
             "pages": ["analytics", "collaboration"]
           }

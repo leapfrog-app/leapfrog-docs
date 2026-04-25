@@ -1,0 +1,106 @@
+---
+title: Transcription architecture
+description: 'Understand how media moves through Leapfrog transcription, which control points exist, and how the flow supports privacy-conscious research work.'
+---
+
+This page explains the end-to-end transcription flow in Leapfrog without focusing on specific infrastructure vendors.
+
+If you want the user workflow, start with [Transcribing Interviews](/basics/transcribing-interviews). If you want the transcript file behavior inside the workspace, see [Transcripts](/features/transcripts).
+
+## End-to-end flow
+
+### 1. A researcher starts from the workspace
+
+The flow begins when someone chooses **Transcribe** for a supported media file in Leapfrog.
+
+At this point, the source recording still lives in the local workspace. Leapfrog gathers the transcript options the researcher selected, such as:
+
+- language or auto-detect
+- speaker labeling
+- redaction
+- filler word handling
+- optional analysis features
+- transcript region
+
+### 2. Leapfrog creates an authenticated job
+
+Before any large media transfer happens, Leapfrog creates a job record through an authenticated backend request tied to the current workspace and organization.
+
+### 3. Media is uploaded to managed storage
+
+Leapfrog then provides a short-lived upload target for the media file.
+
+When a reusable stored copy already exists for the same project flow, Leapfrog can reuse that object instead of uploading the media again.
+
+### 4. The transcription processor reads from storage
+
+Once the upload is complete, Leapfrog submits a transcription request using the stored media location plus the selected transcript options.
+
+The processing layer receives only what it needs to generate the transcript:
+
+- a reference to the uploaded media
+- the selected processing options
+- the configured data region
+
+### 5. Leapfrog tracks the job asynchronously
+
+Transcription is an asynchronous workflow. Leapfrog tracks progress through a combination of status checks and completion callbacks.
+
+### 6. Transcript output is normalized inside Leapfrog
+
+When processing completes, Leapfrog writes the result into its own transcript model. That model can include:
+
+- transcript text
+- segment timing
+- speaker assignments
+- confidence values
+- optional chapters
+- optional entity or sentiment outputs
+
+### 7. The finished transcript returns to the workspace
+
+In the desktop workflow, the completed result is written back into the workspace as a `.transcript.json` sidecar next to the source media.
+
+This keeps the transcript close to the original source and makes it available for review, tagging, indexing, and versioning inside the workspace.
+
+## What data moves where
+
+| Stage | Main data involved | Why it moves |
+| --- | --- | --- |
+| Local workspace | Source audio or video | Starting point chosen by the researcher |
+| Authenticated job setup | File reference, options, workspace identity | Validates access and creates a durable job |
+| Managed upload layer | Source media | Holds the recording for background processing |
+| Transcription processing | Media reference plus selected options | Produces transcript output |
+| Leapfrog backend | Structured transcript result and job status | Normalizes, stores, and tracks the job |
+| Local workspace sidecar | Transcript JSON, speakers, segments, metadata | Makes the result editable and usable in research workflows |
+
+## Compliance and security posture
+
+Leapfrog's transcription flow is designed around a few practical controls.
+
+### Scoped access
+
+Transcription jobs are tied to an authenticated account, workspace, and organization before processing starts.
+
+### Short-lived upload paths
+
+Large media uploads use temporary upload targets instead of permanent open write access.
+
+### Region-aware processing
+
+Teams can choose the transcript region so data handling can better align with internal policy or regulatory requirements.
+
+### Transcript-time privacy controls
+
+Options such as [Redaction](/features/redaction) are applied at transcript generation time so the resulting text is easier to review and share with less manual cleanup.
+
+### Workspace-first output
+
+Leapfrog returns the useful output to the workspace as a transcript sidecar, where it can be reviewed, edited, tagged, and governed alongside other project files.
+
+## Related pages
+
+- [Transcribing Interviews](/basics/transcribing-interviews)
+- [Transcripts](/features/transcripts)
+- [Redaction](/features/redaction)
+- [Authentication](/features/authentication)

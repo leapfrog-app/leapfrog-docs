@@ -1,0 +1,70 @@
+---
+title: Tray
+description: 'Keep Leapfrog running in the background, reopen it from the tray, and watch long-running work without keeping the main window open.'
+---
+
+The tray lets Leapfrog keep working after you close the main window.
+
+## What the tray does
+
+When tray support is available on your desktop, closing the last Leapfrog window hides the app to the tray instead of fully quitting it.
+
+That means Leapfrog can keep:
+
+- watching the workspace for new files
+- uploading media for transcription
+- running transcription jobs
+- auto-tagging files and transcripts
+- indexing the workspace for search
+
+If tray support is not available on the current system, Leapfrog falls back to normal close behavior.
+
+## Reopen or quit Leapfrog
+
+You can get back to Leapfrog in two ways:
+
+- click the tray icon
+- use **Open Leapfrog** from the tray menu
+
+When you want to stop the app completely, use **Quit Leapfrog** from the tray menu.
+
+The first time Leapfrog closes to the tray, it may also show a notification so you know the app is still running in the background.
+
+## What the tray tooltip means
+
+When Leapfrog is idle, the tooltip shows:
+
+- `Leapfrog`
+- `Watching workspace for new files`
+
+When work is in progress, the tooltip switches to activity lines like these:
+
+| Tray text | What it means |
+| --- | --- |
+| `Uploading interview.mp3 (37%)` | A media file is being uploaded for transcription |
+| `Transcribing interview.mp3` | The transcript job is running |
+| `Auto-coding notes.md` | Leapfrog is running semantic auto-tagging on a file or transcript |
+| `Indexing notes.md (3/9 files)` | Leapfrog is scanning, chunking, or embedding workspace files |
+
+## Multiple background jobs
+
+If several jobs are active at the same time, Leapfrog shows the most time-sensitive items first:
+
+- uploads
+- transcriptions
+- auto-coding
+- indexing
+
+The tooltip shows up to four activity lines. If more work is active, Leapfrog adds a summary line such as `+2 more`.
+
+## Running in tray
+
+If Leapfrog is hidden and still busy, the tooltip starts with `Running in tray`.
+
+This is the quickest way to confirm that background work is still active without reopening the full window.
+
+## Related pages
+
+- [Transcripts](/features/transcripts)
+- [Auto-Tagging](/features/auto-tagging)
+- [Indexing](/features/indexing)
