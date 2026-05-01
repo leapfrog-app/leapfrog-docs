@@ -1,9 +1,9 @@
 ---
 title: Redaction
-description: 'Redact sensitive information during transcription so the transcript text is easier to share and review.'
+description: 'Redact sensitive information during transcription so transcript text stays protected across transcript, preview, and agent surfaces.'
 ---
 
-Redaction is a transcript-time option that tells Leapfrog to detect and redact sensitive information in the generated transcript text.
+Redaction is a transcript-time option that tells Leapfrog to detect and redact sensitive information in the generated transcript text before the transcript becomes a workspace file.
 
 ## Where to turn it on
 
@@ -20,12 +20,31 @@ Use redaction when transcript text might include:
 - contact details
 - other sensitive passages you do not want surfaced as plain transcript text
 
-## Important detail
+## What you will see
 
-Redaction applies to the transcript output. Review the resulting transcript if you need stronger compliance guarantees or stricter downstream handling.
+When redaction is on, affected words stay hidden in the transcript:
+
+- redacted words render blurred in transcript and media preview surfaces
+- hovering shows a lock so the hidden text is clearly marked
+- revealing a word requires an explicit confirmation step
+- reveal is local to the open transcript view and does not rewrite the saved transcript file
+
+## What stays protected
+
+Leapfrog keeps the redacted boundary consistent across downstream transcript use:
+
+- the saved `.transcript.json` sidecar remains redacted
+- transcript previews keep the same blurred treatment
+- agent-facing transcript formatting stays redacted instead of exposing hidden values
+
+## Notes and limits
+
+Redaction applies to supported transcription configurations only. If a transcript setting would produce derived output that could expose hidden personal information, Leapfrog turns that output off for the redacted run.
+
+Review the resulting transcript if you need stricter handling or project-specific compliance checks.
 
 For many teams, the right workflow is:
 
 1. transcribe with redaction on
-2. review the transcript
-3. index and tag the redacted transcript instead of the raw recording notes
+2. review only the passages that genuinely need confirmation
+3. keep the transcript redacted for broader tagging, indexing, and sharing

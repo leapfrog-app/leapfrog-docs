@@ -50,6 +50,17 @@ These settings are available from **Leapfrog Settings > Transcripts**:
 | Completion notifications | Shows an OS notification when a transcript finishes |
 | Transcript region | Uses the configured AssemblyAI region |
 
+## Redacted transcripts
+
+When redaction is enabled:
+
+- redacted words appear blurred until someone explicitly confirms a reveal
+- the reveal action only affects the open transcript view
+- the saved transcript sidecar stays redacted
+- agent-facing transcript use keeps the same redacted boundary
+
+Leapfrog also turns off incompatible derived transcript analysis for that run so hidden information does not leak through secondary output.
+
 ## Transcript files
 
 Transcript sidecars are normal files, even though Leapfrog hides them in Explorer by default.
@@ -63,6 +74,8 @@ That matters because you can:
 ## Good workflow
 
 Transcribe first, make a quick pass to rename speakers and clean obvious issues, then start tagging or run auto-tagging once the transcript matches the structure you want to analyze.
+
+If the interview contains sensitive information, keep redaction on and reveal only the specific words that need direct verification.
 
 ## Related pages
 
