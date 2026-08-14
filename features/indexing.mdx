@@ -17,6 +17,14 @@ Today that means:
 
 Leapfrog keeps your source files local. The desktop app syncs embeddings and related metadata to the cloud for connected search workflows.
 
+## Organization ownership
+
+Cloud indexes belong to the organization that is active when the workspace syncs. Leapfrog combines a random local workspace identity with the active organization to resolve the correct cloud project.
+
+If you switch organizations and sync the same folder, Leapfrog creates or updates a separate project for the new organization. It does not copy, transfer, or expose the previous organization's index. Switching back reconnects the workspace to the project owned by that organization.
+
+See [Organizations and projects](/basics/organizations) for project ownership, member access, and retention behavior.
+
 ## Default indexed file types
 
 By default, Leapfrog indexes:

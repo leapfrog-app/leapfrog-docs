@@ -1,83 +1,65 @@
 ---
-title: "Organizations"
-description: "Manage organizations, billing, and subscriptions"
+title: "Organizations and projects"
+description: "Understand organization ownership, project isolation, member access, and billing"
 icon: "building"
 ---
 
-# Organizations
+# Organizations and projects
 
-Organizations group workspaces and manage billing. Each organization has its own subscription plan and member access.
+Organizations give research teams a shared boundary for people, projects, indexed research data, usage, and billing. Switch organizations when you need to work with a different team without mixing its research material with another organization's projects.
 
-## Organization types
+## Personal and team organizations
 
-- **Personal**: Individual user organization
-- **Team**: Multiple members can be invited
+Your account starts with a personal organization for your own projects. You can also create or join team organizations and invite members to collaborate.
 
-## Managing organizations
+Use the organization switcher in the dashboard to choose the active organization. The dashboard then shows that organization's projects, transcripts, usage, members, and billing information.
 
-Access organizations from the organizations page. View all organizations you belong to and switch between them.
+## How projects belong to organizations
 
-### Creating an organization
+Every cloud project belongs to one organization. Its indexed chunks, embeddings, transcripts, and indexing preferences stay associated with that organization.
 
-1. Go to the organizations page
-2. Click **Create Organization**
-3. Enter organization name and billing email
-4. The organization is created and you're set as owner
+A local workspace has a random, non-sensitive workspace identity. Leapfrog uses that identity together with the active organization to find the correct cloud project:
 
-### Organization settings
+```text
+active organization + local workspace identity = cloud project
+```
 
-View organization details in **Workspace Settings > Organization**:
+The local workspace does not store the cloud project's database ID. This prevents a project owned by one organization from being reused by another.
 
-- Organization name
-- Organization type
-- Current plan
-- Billing email
-- Billing address
-- Created date
+## Switching organizations
 
-## Billing
+When you open the same local workspace under a different organization, Leapfrog treats it as a separate organization-owned project:
 
-Manage billing in **Workspace Settings > Organization > Billing**.
+- the existing index is not copied or transferred
+- the previous organization keeps its project and research data
+- members of the new organization cannot search the previous organization's index
+- syncing under the new organization creates or updates only its own project
 
-### Plans
+For example, indexing a study in your personal organization and later switching to **Acme Research** does not move the personal project. Acme receives a separate index when the workspace syncs under Acme.
 
-- **Free**: 1 workspace, limited features
-- **Pro**: Multiple workspaces, full features
-- **Custom**: Custom pricing and limits
+<Note>
+  Check the active organization before syncing a workspace. The organization that is active during sync owns the resulting cloud project and index.
+</Note>
 
-### Subscription management
+## Member access
 
-**Pro plan features:**
+Organization membership controls access to organization-owned projects. Invite and remove members from **Dashboard > Organization**.
 
-- Multiple workspaces
-- Seat-based pricing (€50/month per seat)
-- Adjustable seat count
+Removing a member revokes their access to the organization's dashboard and projects. It does not delete the organization's projects, because other members may still rely on them.
 
-**Managing billing:**
+## Project deletion and retention
 
-1. Go to **Workspace Settings > Organization > Billing**
-2. Click **Manage Billing** to open the Stripe billing portal
-3. Update seat count, view billing history, manage subscription
+Switching organizations does not delete projects. To remove an organization-owned project and its indexed project data, delete it from **Dashboard > Projects** while the correct organization is active.
 
-### Seat limits
+Deletion affects that organization's project only. A separate project created from the same local workspace in another organization remains independent.
 
-Each seat allows one active user. If you have 5 seats, 5 users can access the organization's workspaces simultaneously. Increase or decrease seats as needed in the billing portal.
+## Organization billing
 
-### Subscription status
+Billing and usage are scoped to the active organization. Personal plans are managed separately from negotiated organization plans.
 
-- **Active**: Subscription is active and billing normally
-- **Canceled**: Will remain active until the current period ends
-- **Past Due**: Payment failed, requires action
+Organization owners can open **Dashboard > Billing** to view the current plan and contact Leapfrog about activating or changing an organization plan. Member management is available under **Dashboard > Organization**.
 
-### Upgrading
+## Related guides
 
-1. Go to **Workspace Settings > Organization > Billing**
-2. Click **Upgrade to Pro**
-3. Choose seat count during checkout
-4. Complete payment
-
-Only organization owners can upgrade plans or modify billing settings.
-
-## Organization members
-
-Invite members to your organization from **Workspace Settings > Organization > Members**. Organization members can access workspaces within that organization according to workspace permissions.
+- [Workspaces](/basics/workspaces)
+- [Indexing](/features/indexing)
